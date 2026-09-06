@@ -63,7 +63,7 @@ endif()
 # Adds a plugin target.
 set(TREMOLO_PLUGIN_NAME "MyTremoloCoursePlugin")
 juce_add_plugin(
-        TremoloCoursePlugin
+        MyTremoloCoursePlugin
   PRODUCT_NAME
     ${TREMOLO_PLUGIN_NAME}
   VERSION
@@ -91,7 +91,7 @@ juce_add_plugin(
 )
 
 # Configures the JUCE sources included in the plugin target.
-target_compile_definitions(TremoloCoursePlugin
+target_compile_definitions(MyTremoloCoursePlugin
   PRIVATE
     JUCE_WEB_BROWSER=0
     JUCE_USE_CURL=0
@@ -125,7 +125,7 @@ target_compile_options(tremolo_plugin INTERFACE "${PROJECT_WARNINGS_CXX}")
 target_link_libraries(tremolo_plugin INTERFACE tremolo::tremolo_plugin_assets)
 
 target_link_libraries(
-  TremoloCoursePlugin
+  MyTremoloCoursePlugin
   PRIVATE
     tremolo::tremolo_plugin
   PUBLIC
